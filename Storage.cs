@@ -6,7 +6,10 @@ public class Storage
 {
     Dictionary<int, Student> record;
 
-    public Storage() { record = new Dictionary<int, Student>(); }
+    public Storage()
+    {
+        record = new Dictionary<int, Student>();
+    }
 
     public void InitTestRecs()
     {
