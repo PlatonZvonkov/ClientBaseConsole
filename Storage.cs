@@ -6,12 +6,12 @@ public class Storage
 {
     Dictionary<int, Student> record;
 
-    public Storage()
+    internal Storage()
     {
         record = new Dictionary<int, Student>();
     }
 
-    public void InitTestRecs()
+    protected internal void InitTestRecs()
     {
         Student student1 = new Student()
         {
