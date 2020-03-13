@@ -17,27 +17,35 @@ namespace NoobApp
             p.MainLoop();
         }
 
-        void Init() {
+        void Init()
+        {
             studentDB = new Storage();
             studentDB.InitTestRecs();
         }
 
-        void MainLoop() {
-            while (true) {
-
+        void MainLoop()
+        {
+            int idcheck;
+            while (true)
+            {
                 Console.Write("Введите ваш ID: ");
                 var input = Console.ReadLine();
                 Student student = FindStudent(input);
-                if (student == null) {
-                    Console.WriteLine("Вы не в базе данны");
-                } else {
+                if (!int.TryParse(input, out idcheck)) 
+                {
+                    Console.WriteLine("ID вводиться в целочисленном формате");
+                }else if(student == null)
+                {
+                    Console.WriteLine("Вас нет в базе данных");
+                }else 
+                {
                     Console.WriteLine("Здравствуйте {1}, ваш нынешний счет {2}", student.id, student.Name, student.Score);
                 }
-
             }
         }
 
-        public Student FindStudent(string rawid) {
+        public Student FindStudent(string rawid)
+        {
             int id = -1;
             Int32.TryParse(rawid, out id);
 
