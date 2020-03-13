@@ -24,14 +24,13 @@ namespace NoobApp
         }
 
         void MainLoop()
-        {
-            int idcheck;
+        {            
             while (true)
             {
                 Console.Write("Введите ваш ID: ");
                 var input = Console.ReadLine();
                 Student student = FindStudent(input);
-                if (!int.TryParse(input, out idcheck)) 
+                if (!int.TryParse(input, out _)) 
                 {
                     Console.WriteLine("ID вводиться в целочисленном формате");
                 }else if(student == null)
